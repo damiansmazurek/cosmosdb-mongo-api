@@ -1,4 +1,4 @@
-# cosmosdb-mongo-api
+# Cosmos DB - device API
 
 ## Python app to simulate streaming data from devices to CosmosDB using Mongo API.
 
