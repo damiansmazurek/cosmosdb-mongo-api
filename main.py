@@ -2,6 +2,7 @@ import pymongo
 import os
 from random import seed, random
 from datetime import datetime
+from time import sleep
 
 # Get env variables
 CONNECTION_STRING = os.environ.get('CONNECTION_STRING')
@@ -16,8 +17,9 @@ mydb = myclient[DB_NAME]
 mycol = mydb[COLLECTION_NAME]
 
 batchdata= []
-for i in range(BATCH_SIZE):
+while true:
+    for i in range(BATCH_SIZE):
     seed(datetime.now().timestamp())
     batchdata.append({ "deviceid": DEVICE_ID, "timestamp": datetime.now() , a:random()*100, b: random()*200, c: random()*50, message: 'Telemetric entity'})
-
-x = mycol.insert_many(mydict)
+    x = mycol.insert_many(mydict)
+    sleep(1)
